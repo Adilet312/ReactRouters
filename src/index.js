@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './components/Nav/Nav';
+import MainPage from './components/Pages/MainPage/MainPage';
 
 
 ReactDOM.render(
-    <Nav/>,
+    <MainPage/>,
   document.getElementById('root')
 
 );
