@@ -12,7 +12,7 @@ const Nav = () => {
     <nav>
       <ul className = 'nav'>
           {
-            cities.map( city => <li key = {city.name}><Link to= {city.name.toLowerCase()}>{city.name}</Link></li>)
+            cities.map( city => <li key = {city.name}><Link to= {city.name.toLowerCase()==='home'? '/' :city.name.toLowerCase()}>{city.name}</Link></li>)
           }
       </ul>
     </nav>

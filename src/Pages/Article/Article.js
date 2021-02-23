@@ -1,6 +1,9 @@
 import React, { Fragment }  from 'react';
 import ArticleList from '../../components/ArticleList/ArticleList';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import About from '../About/About';
+import Home from '../Home/Home';
+import Articles from '../Articles/Articles';
 import './Article.css';
 const articles =  [
     {
@@ -79,8 +82,17 @@ const articles =  [
     ]
 const  Article= ({match}) => {
   const name = match.params.name;
-  // const nameArrays = name.split('/');
-  // console.log(nameArrays);
+  if(["articles","about","home"].includes(name)){
+    switch(name){
+      case 'articles' :{
+        return <Articles/>
+      }
+      case 'about':{
+        return <About/>
+      }
+      default: return <Home/>
+    }
+  }
   const findArticle = articles.find( article => article.name === name);
   const otherArticles = articles.filter( article => article.name!==name);
   if(!findArticle) return <NotFoundPage/>
